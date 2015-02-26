@@ -13,6 +13,14 @@ class ActiveRecord::ConnectionAdapters::NullDBAdapter
     def columns
       @columns ||= []
     end
+
+    def > other
+      self.length > other
+    end
+
+    def < other
+      self.length < other
+    end
   end
 
 end
