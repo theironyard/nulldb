@@ -71,6 +71,7 @@ describe "NullDB" do
     ActiveRecord::Migration.verbose = false
     ActiveRecord::Schema.define do
       create_table(:employees) do |t|
+        t.uuid :uuid
         t.string  :name
         t.date    :hire_date
         t.integer :employee_number

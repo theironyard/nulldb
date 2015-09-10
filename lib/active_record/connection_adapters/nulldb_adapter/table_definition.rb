@@ -1,5 +1,7 @@
 class ActiveRecord::ConnectionAdapters::NullDBAdapter
-
-  TableDefinition = ActiveRecord::ConnectionAdapters::TableDefinition
-
+  class TableDefinition < ActiveRecord::ConnectionAdapters::TableDefinition
+    def uuid(name, options = {})
+      column(name, :uuid, options)
+    end
+  end
 end
